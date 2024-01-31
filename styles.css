@@ -1,0 +1,139 @@
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+/******************************************
+  /* BASE STYLES
+  /*******************************************/
+
+body {}
+
+/******************************************
+  /* LAYOUT
+  /*******************************************/
+header,
+nav,
+nav>ul {
+    width: 100%;
+    background-color: black;
+}
+
+header * {
+    text-decoration: none;
+    list-style-type: none;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+nav>ul>* {
+    width: 15%;
+    padding: 2%;
+}
+
+nav>ul> :nth-child(2) {
+    width: 70%;
+}
+
+nav ul li ul li {
+    width: 10%;
+    padding: 0.5%;
+    text-align: center;
+}
+
+input {
+    color: black;
+}
+
+main section {
+    float: left;
+    width: 50%;
+    padding: 2%;
+}
+
+h3 {
+    text-align: right;
+}
+
+main section+section section {
+    border: 1px solid;
+}
+
+main+section {
+    padding: 2%;
+}
+
+main+section section {
+    float: left;
+    padding: 2%;
+    width: 33.3333%;
+}
+
+footer {}
+
+/******************************************
+  /* ADDITIONAL STYLES
+  /*******************************************/
+
+@media screen and (max-width: 970px) {
+    nav ul li ul li {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 710px) {
+    main>section {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 485px) {
+    nav>ul>* {
+        width: 25%;
+    }
+
+    nav>ul> :nth-child(2) {
+        width: 50%;
+    }
+
+    nav ul li ul li {
+        display: none;
+    }
+
+    nav ul li ul :nth-child(1),
+    nav ul li ul :nth-child(10) {
+        display: block;
+        width: 50%;
+    }
+
+    main+section section {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    main section section {
+        width: 100%;
+    }
+
+    h3 {
+        text-align: left;
+    }
+}
